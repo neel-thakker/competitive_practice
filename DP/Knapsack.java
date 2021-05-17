@@ -4,35 +4,36 @@ public class Knapsack {
 
     static int dp[][] = new int[100][100]; // Global Call
 
-    static int memoization(List<Integer> arr, List<Integer> vals, int capacity, int w, int cost) {
-        if (arr.size() == 0)
-            return cost;
-
-        if (dp[w][cost] != -1) // Checking if already Exists....
-            return dp[w][cost];
-
-        int ans1 = recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), capacity, w, cost);
-
-        if (arr.get(0) + w <= capacity) {
-            int ans2 = recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), capacity, w + arr.get(0),
-                    cost + vals.get(0));
-
-            return dp[w][cost] = Math.max(ans1, ans2); // Storing if it doesn't exists...
+    static int memoize(List<Integer> arr, List<Integer> vals, int w, int n) {
+        if (n == 0 || w == 0) {
+            return 0;
         }
 
-        return dp[w][cost] = ans1; // Storing if it doesn't exists...
+        if (dp[n][w] != -1) // Checking if already Exists....
+            return dp[n][w];
+
+        int ans1 = memoize(arr.subList(1, arr.size()), vals.subList(1, vals.size()), w, n - 1);
+
+        if (arr.get(0) <= w) {
+            int ans2 = vals.get(0)
+                    + memoize(arr.subList(1, arr.size()), vals.subList(1, vals.size()), w - arr.get(0), n - 1);
+
+            return dp[n][w] = Math.max(ans1, ans2); // Storing if it doesn't exists...
+        }
+
+        return dp[n][w] = ans1; // Storing if it doesn't exists...
     }
 
-    static int recursive(List<Integer> arr, List<Integer> vals, int capacity, int w, int cost) {
-        if (arr.size() == 0) {
-            return cost;
+    static int recursive(List<Integer> arr, List<Integer> vals, int w, int n) {
+        if (n == 0 || w == 0) {
+            return 0;
         }
 
-        int ans1 = recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), capacity, w, cost);
+        int ans1 = recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), w, n - 1);
 
-        if (arr.get(0) + w <= capacity) {
-            int ans2 = recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), capacity, w + arr.get(0),
-                    cost + vals.get(0));
+        if (arr.get(0) <= w) {
+            int ans2 = vals.get(0)
+                    + recursive(arr.subList(1, arr.size()), vals.subList(1, vals.size()), w - arr.get(0), n - 1);
 
             return Math.max(ans1, ans2);
         }
@@ -56,9 +57,9 @@ public class Knapsack {
             Arrays.fill(row, -1);
         }
 
-        // System.out.println(recursive(arr, vals, w, 0, 0));
+        // System.out.println(recursive(arr, vals, w, n));
 
-        System.out.println(memoization(arr, vals, w, 0, 0));
+        System.out.println(memoize(arr, vals, w, n));
 
         kb.close();
     } // end-main
