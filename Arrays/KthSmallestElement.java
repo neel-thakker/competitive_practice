@@ -10,6 +10,8 @@ public class KthSmallestElement {
         }
 
         System.out.println(kthSmallest(arr, 0, n-1, 3));
+
+        sc.close();
     }   
     
     public static int kthSmallest(int[] arr, int l, int r, int k) { 

@@ -8,6 +8,7 @@ public class ReverseAString {
         
         System.out.println(reverseWord(s));
     
+        sc.close();
     }   // end-main
 
     static String reverseWord(String str) {

@@ -6,7 +6,7 @@ public class MyLinkedList {
         int data;
         Node next;
 
-        Node(int d) {
+        public Node(int d) {
             data = d;
             next = null;
         }
@@ -14,8 +14,8 @@ public class MyLinkedList {
 
     /*
     Methods of MyLinkedList Class: 
+        .add(MyLinkedList ll, int data);    // addLast
         .addFirst(MyLinkedList ll, int data);
-        .addlast(MyLinkedList ll, int data);
         .addAt(MyLinkedList ll, int index, int data);
         
         .println(MyLinkedList ll);
@@ -35,7 +35,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList addLast(MyLinkedList ll, int data) {
+    public static MyLinkedList add(MyLinkedList ll, int data) {
         Node newNode = new Node(data);
         newNode.next = null;                // for safety wapis se.
 
