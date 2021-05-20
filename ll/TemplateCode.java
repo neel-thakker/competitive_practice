@@ -1,4 +1,4 @@
-import java.util.*;
+// import java.util.*;
 import java.io.*;
 
 public class TemplateCode {
@@ -8,7 +8,7 @@ public class TemplateCode {
 
         int t = Integer.parseInt(br.readLine().trim());
         while(t-->0) {
-            int n = Integer.parseInt(br.readLine().trim()), ans = 0;
+            int n = Integer.parseInt(br.readLine().trim()), ans = n;
         
             log.write(ans+"\n");
         }   // end-while

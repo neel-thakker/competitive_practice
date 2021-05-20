@@ -1,4 +1,4 @@
-public class MyLinkedList {
+public class Ll {
 
     Node head;
 
@@ -13,20 +13,20 @@ public class MyLinkedList {
     }
 
     /*
-    Methods of MyLinkedList Class: 
-        .add(MyLinkedList ll, int data);    // addLast
-        .addFirst(MyLinkedList ll, int data);
-        .addAt(MyLinkedList ll, int index, int data);
+    Methods of Ll Class: 
+        .add(Ll ll, int data);    // addLast
+        .addFirst(Ll ll, int data);
+        .addAt(Ll ll, int index, int data);
         
-        .println(MyLinkedList ll);
+        .println(Ll ll);
 
-        .remove(MyLinkedList ll, int key);
-        .removeFirst(MyLinkedList ll);
-        .removeLast(MyLinkedList ll);
-        .removeAt(MyLinkedList ll, int index);
+        .remove(Ll ll, int key);
+        .removeFirst(Ll ll);
+        .removeLast(Ll ll);
+        .removeAt(Ll ll, int index);
     */
 
-    public static MyLinkedList addFirst(MyLinkedList ll, int data) {
+    public static Ll addFirst(Ll ll, int data) {
         Node newNode = new Node(data);
         
         newNode.next = ll.head;                // for safety wapis se.
@@ -35,7 +35,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList add(MyLinkedList ll, int data) {
+    public static Ll add(Ll ll, int data) {
         Node newNode = new Node(data);
         newNode.next = null;                // for safety wapis se.
 
@@ -53,7 +53,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList addAt(MyLinkedList ll, int index, int data) {
+    public static Ll addAt(Ll ll, int index, int data) {
         Node newNode = new Node(data);
 
         
@@ -79,7 +79,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static void println(MyLinkedList ll) {
+    public static void println(Ll ll) {
         Node temp = ll.head;
 
         System.out.print("[");
@@ -90,7 +90,7 @@ public class MyLinkedList {
         System.out.println(temp.data+"]");
     }
 
-    public static MyLinkedList remove(MyLinkedList ll, int key) {
+    public static Ll remove(Ll ll, int key) {
         // Case 1: Key is found at Head.
         // Case 2: key is found after Head.
 
@@ -123,7 +123,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList removeFirst(MyLinkedList ll) {
+    public static Ll removeFirst(Ll ll) {
         if(ll.head==null) {
             System.out.println("List is Empty already.");
         } else {
@@ -132,7 +132,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList removeLast(MyLinkedList ll) {
+    public static Ll removeLast(Ll ll) {
         Node temp = ll.head;
 
         if(temp==null) {
@@ -148,7 +148,7 @@ public class MyLinkedList {
         return ll;
     }
 
-    public static MyLinkedList removeAt(MyLinkedList ll, int Index) {
+    public static Ll removeAt(Ll ll, int Index) {
         // Case 1: Key is found at Head.
         // Case 2: key is found after Head.
 
