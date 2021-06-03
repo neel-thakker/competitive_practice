@@ -1,5 +1,6 @@
 public class reverseLL {
 
+    // Q2
     static Ll.Node reverseInGroup(Ll.Node head, int k) {
         Ll.Node prev = null, temp = null, nextNode = head, start = head, end = null;
         int count = 0;
@@ -39,6 +40,56 @@ public class reverseLL {
         return head;
     }
 
+    // Q1
+    // Iterative method
+    static Ll.Node reverse_iterative(Ll.Node head) {
+        if(head==null || head.next==null) {
+            return head;
+        }
+
+        Ll.Node prev = null, temp = null, nextNode = head;
+
+        while(nextNode != null) {
+            if(nextNode.next==null) {   // IMP block
+                nextNode.next = temp; 
+                head = nextNode;
+                break;
+            }
+
+            temp = nextNode;
+            nextNode = nextNode.next;       // imp to keep it here and not in the end of the loop, coz of heap management
+            temp.next = prev;
+            prev = temp;
+        }
+        
+        return head;
+    }
+
+    // Q1
+    // Recursive method
+    static Ll.Node reverse_recursive(Ll.Node head,Ll.Node tail) {
+        if(head.next==null) {
+            return head;
+        }
+        
+        Ll.Node newHead = reverse_recursive(head.next, tail);
+        head.next = null;
+
+        // Adding temp at the end of the obtained ll(head),
+        Ll.Node curr = head;
+        if(curr.next==null) {
+            curr.next = temp;
+        } else {
+            while(curr.next!=null) {
+                curr = curr.next;
+            }
+
+            curr.next = temp;
+        }
+                
+        return newHead;
+    }
+
     public static void main(String[] args) {
 
         Ll ll = new Ll();
@@ -51,15 +102,7 @@ public class reverseLL {
         Ll.println(ll);
         System.out.println("Head:- " + ll.head.data);
 
-        Ll.Node curr = ll.head, b4 = null;
-        while(ll.head.next != null) {
-            curr = ll.head;
-            ll.head = ll.head.next;
-            curr.next = b4;
-            b4 = curr;
-        }
-
-        ll.head.next = curr;           // IMP Line 
+        ll.head = reverse_recursive(ll.head);
 
         Ll.println(ll);
         System.out.println("Head:- " + ll.head.data + "\n\nSecond Question:-");

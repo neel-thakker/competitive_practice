@@ -6,6 +6,8 @@ public class Ll {
         int data;
         Node next;
 
+        int flag;       // Replacement of Hashing in many cases :)
+
         public Node(int d) {
             data = d;
             next = null;
