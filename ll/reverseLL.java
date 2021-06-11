@@ -67,7 +67,7 @@ public class reverseLL {
 
     // Q1
     // Recursive method
-    static Ll.Node reverse_recursive(Ll.Node head,Ll.Node tail) {
+    static Ll.Node reverse_recursive(Ll.Node head, Ll.Node tail) {
         if(head.next==null) {
             return head;
         }
@@ -75,17 +75,17 @@ public class reverseLL {
         Ll.Node newHead = reverse_recursive(head.next, tail);
         head.next = null;
 
-        // Adding temp at the end of the obtained ll(head),
-        Ll.Node curr = head;
-        if(curr.next==null) {
-            curr.next = temp;
-        } else {
-            while(curr.next!=null) {
-                curr = curr.next;
-            }
+        // // Adding temp at the end of the obtained ll(head),
+        // Ll.Node curr = head;
+        // if(curr.next==null) {
+        //     curr.next = temp;
+        // } else {
+        //     while(curr.next!=null) {
+        //         curr = curr.next;
+        //     }
 
-            curr.next = temp;
-        }
+        //     curr.next = temp;
+        // }
                 
         return newHead;
     }
@@ -102,7 +102,7 @@ public class reverseLL {
         Ll.println(ll);
         System.out.println("Head:- " + ll.head.data);
 
-        ll.head = reverse_recursive(ll.head);
+        // ll.head = reverse_recursive(ll.head);
 
         Ll.println(ll);
         System.out.println("Head:- " + ll.head.data + "\n\nSecond Question:-");

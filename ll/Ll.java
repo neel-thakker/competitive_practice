@@ -1,6 +1,6 @@
 public class Ll {
 
-    Node head;
+    public Node head;
 
     static class Node {
         int data;
