@@ -1,6 +1,16 @@
 import java.util.*;
 
 public class DP {
+
+    static void print(int arr[][]) {
+        System.out.println("Dp Matrix:- ");
+        for(int i=0 ; i<arr.length ; i++) {
+            for(int j=0 ; j<arr[i].length ; j++) 
+                System.out.print(arr[i][j]+" ");
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int n = 4, cap = 7;
@@ -21,6 +31,7 @@ public class DP {
                     dp[i][j] = dp[i - 1][j];
 
         System.out.println(dp[n][cap]);
+        print(dp);
 
         kb.close();
     } // end-main
