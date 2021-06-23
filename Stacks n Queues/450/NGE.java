@@ -12,15 +12,15 @@ public class NGE {
     */ 
 
     //Function to find the next greater element for each element of the array.
-    public static long[] nextLargerElement(long[] arr, int n) { 
-        long ans[] = new long[n];
+    public static int[] nextLargerElement(int[] arr, int n) { 
+        int ans[] = new int[n];
         
-        Stack<Long> st = new Stack<Long>();
+        Stack<Integer> st = new Stack<Integer>();
         for(int i=n-1 ; i>=0 ; i--) {
             ans[i] = -1;
             
             while(!st.isEmpty()) {
-                if(st.peek()>arr[i]) {
+                if(st.peek() > arr[i]) {
                     ans[i] = st.peek();
                     break;
                 }
@@ -35,9 +35,9 @@ public class NGE {
     } 
 
     public static void main(String[] args) {
-        long arr[] = { 1, 3, 2, 4 };
+        int arr[] = { 1, 3, 2, 4 };
 
-        long ans[] = nextLargerElement(arr, arr.length);
+        int ans[] = nextLargerElement(arr, arr.length);
         for(int i=0 ; i<ans.length ; i++) {
             System.out.print(ans[i]+" ");
         }

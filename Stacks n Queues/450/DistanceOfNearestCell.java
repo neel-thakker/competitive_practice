@@ -2,6 +2,12 @@ import java.util.*;
 
 public class DistanceOfNearestCell {
     
+    /*
+        Given a binary grid. Find the distance of nearest 1 in the grid for each cell.
+        The distance is calculated as |i1 – i2| + |j1 – j2|, where i1, j1 are the row number and column number of the current 
+        cell and i2, j2 are the row number and column number of the nearest cell having value 1.
+    */
+
     static boolean isSafe(int[][] arr, int n, int m, int i, int j) {
         return i>=0 && i<n && j>=0 && j<m && arr[i][j]==Integer.MAX_VALUE;
     }
@@ -27,7 +33,7 @@ public class DistanceOfNearestCell {
 
             for(int i=0 ; i<k ; i++) {
                 Pair temp = q.remove();
-                ans[temp.i][temp.j] = Math.min(dist, ans[temp.i][temp.j]);
+                ans[temp.i][temp.j] = Math.min(dist, ans[temp.i][temp.j]);      // most imp line, dono mai se minimum diya ussko...
 
                 for(int j=0 ; j<4 ; j++) {
                     int x = temp.i + addx[j], y = temp.j + addy[j];

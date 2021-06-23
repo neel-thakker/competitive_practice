@@ -2,6 +2,12 @@ import java.util.*;
 
 public class SlidingWindowProblem {
 
+    /*
+        Given an array A[] of size N and a positive integer K, find the first negative integer for each and every window(contiguous subarray) 
+        of size K.
+    */
+
+    // Showing Red lines but running prefectly....
     static long[] printFirstNegativeInteger(long arr[], int n, int k) {
         long[] ans = new long[n-k+1];
         int p = 0;
