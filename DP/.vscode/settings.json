@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
-        // "VermaJi/1_0 0-1 Knapsack",
-        "VermaJi/1_1 Subset Sum"
+        "450/",
+        "VermaJi/*/"
     ]
 }
