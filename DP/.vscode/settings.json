@@ -1,6 +1,8 @@
 {
-    "java.project.sourcePaths": [
-        "450/",
-        "VermaJi/*/"
-    ]
+	"java.project.sourcePaths": [
+		"450/",
+		"VermaJi/1_1 Subset Sum",
+		"VermaJi/1_2 Count of SubSet Sum",
+		"VermaJi/1_3 Min Subset Sum Diff"
+	]
 }
